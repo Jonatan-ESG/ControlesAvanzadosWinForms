@@ -22,11 +22,6 @@ namespace ControlesAvanzados
             inicializarListBox();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void agregarVentas()
         {
             ventas.Add(new Venta(2024, 1, "Guatemala", 100000));
@@ -56,26 +51,36 @@ namespace ControlesAvanzados
             ventas.Add(new Venta(2024, 6, "Zacapa", 10000));
         }
 
-        private void mostrarVentas() { 
-            foreach (Venta venta in ventas)
+        private void mostrarVentas()
+        {
+            listadoVentas.Controls.Clear();
+            if (selectorDepartamento.SelectedItems.Count == 0)
             {
-                Label labelVenta = new Label();
-                labelVenta.Text = $"Año: {venta.Anio} \n Mes: {venta.Mes} \n Departamento: {venta.Departamento} \n Ventas: Q.{venta.Ventas}";
-                labelVenta.AutoSize = true;
-                labelVenta.Font = new Font("Arial", 12, FontStyle.Bold);
-                labelVenta.Padding =  new Padding(10);
-                labelVenta.BorderStyle = BorderStyle.FixedSingle;
-                labelVenta.Margin = new Padding(10);
-                labelVenta.BackColor = Color.LightGray;
-                listadoVentas.Controls.Add(labelVenta);
+                foreach (Venta venta in ventas)
+                {
+                    Label labelVenta = crearEqituetaVenta(venta);
+                    listadoVentas.Controls.Add(labelVenta);
+                }
             }
-        
+            else
+            {
+                foreach (Venta venta in ventas)
+                {
+                    if (selectorDepartamento.SelectedItems.Contains(venta.Departamento))
+                    {
+                        Label labelVenta = crearEqituetaVenta(venta);
+                        listadoVentas.Controls.Add(labelVenta);
+                    }
+                }
+            }
         }
 
-        private void inicializarListBox() { 
+        private void inicializarListBox()
+        {
             List<string> departamentos = new List<string>();
-            foreach (Venta venta in ventas) { 
-                if(!departamentos.Contains(venta.Departamento))
+            foreach (Venta venta in ventas)
+            {
+                if (!departamentos.Contains(venta.Departamento))
                 {
                     departamentos.Add(venta.Departamento);
                 }
@@ -84,6 +89,24 @@ namespace ControlesAvanzados
             {
                 selectorDepartamento.Items.Add(departamento);
             }
+        }
+
+        private Label crearEqituetaVenta(Venta venta)
+        {
+            Label labelVenta = new Label();
+            labelVenta.Text = $"Año: {venta.Anio} \n Mes: {venta.Mes} \n Departamento: {venta.Departamento} \n Ventas: Q.{venta.Ventas}";
+            labelVenta.AutoSize = true;
+            labelVenta.Font = new Font("Arial", 12, FontStyle.Bold);
+            labelVenta.Padding = new Padding(10);
+            labelVenta.BorderStyle = BorderStyle.FixedSingle;
+            labelVenta.Margin = new Padding(10);
+            labelVenta.BackColor = Color.LightGray;
+            return labelVenta;
+        }
+
+        private void selectorDepartamento_SelectedValueChanged(object sender, EventArgs e)
+        {
+            mostrarVentas();
         }
     }
 }

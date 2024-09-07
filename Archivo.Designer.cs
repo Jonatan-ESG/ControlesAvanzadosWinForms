@@ -43,7 +43,6 @@
             label1.Size = new Size(330, 31);
             label1.TabIndex = 0;
             label1.Text = "Formulario de Nuevo Archivo";
-            label1.Click += label1_Click;
             // 
             // listadoVentas
             // 
@@ -69,6 +68,7 @@
             selectorDepartamento.SelectionMode = SelectionMode.MultiSimple;
             selectorDepartamento.Size = new Size(316, 164);
             selectorDepartamento.TabIndex = 3;
+            selectorDepartamento.SelectedValueChanged += selectorDepartamento_SelectedValueChanged;
             // 
             // Archivo
             // 
