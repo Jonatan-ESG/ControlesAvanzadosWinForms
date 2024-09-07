@@ -19,6 +19,7 @@ namespace ControlesAvanzados
             InitializeComponent();
             agregarVentas();
             mostrarVentas();
+            inicializarListBox();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -52,6 +53,7 @@ namespace ControlesAvanzados
             ventas.Add(new Venta(2024, 4, "Escuintla", 78000));
             ventas.Add(new Venta(2024, 5, "Escuintla", 79000));
             ventas.Add(new Venta(2024, 6, "Escuintla", 90000));
+            ventas.Add(new Venta(2024, 6, "Zacapa", 10000));
         }
 
         private void mostrarVentas() { 
@@ -68,6 +70,20 @@ namespace ControlesAvanzados
                 listadoVentas.Controls.Add(labelVenta);
             }
         
+        }
+
+        private void inicializarListBox() { 
+            List<string> departamentos = new List<string>();
+            foreach (Venta venta in ventas) { 
+                if(!departamentos.Contains(venta.Departamento))
+                {
+                    departamentos.Add(venta.Departamento);
+                }
+            }
+            foreach (string departamento in departamentos)
+            {
+                selectorDepartamento.Items.Add(departamento);
+            }
         }
     }
 }

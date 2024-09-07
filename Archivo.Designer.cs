@@ -31,6 +31,7 @@
             label1 = new Label();
             listadoVentas = new FlowLayoutPanel();
             checkedListBox1 = new CheckedListBox();
+            selectorDepartamento = new ListBox();
             SuspendLayout();
             // 
             // label1
@@ -60,11 +61,21 @@
             checkedListBox1.Size = new Size(8, 4);
             checkedListBox1.TabIndex = 2;
             // 
+            // selectorDepartamento
+            // 
+            selectorDepartamento.FormattingEnabled = true;
+            selectorDepartamento.Location = new Point(26, 97);
+            selectorDepartamento.Name = "selectorDepartamento";
+            selectorDepartamento.SelectionMode = SelectionMode.MultiSimple;
+            selectorDepartamento.Size = new Size(316, 164);
+            selectorDepartamento.TabIndex = 3;
+            // 
             // Archivo
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1275, 928);
+            Controls.Add(selectorDepartamento);
             Controls.Add(checkedListBox1);
             Controls.Add(listadoVentas);
             Controls.Add(label1);
@@ -79,5 +90,6 @@
         private Label label1;
         private FlowLayoutPanel listadoVentas;
         private CheckedListBox checkedListBox1;
+        private ListBox selectorDepartamento;
     }
 }
