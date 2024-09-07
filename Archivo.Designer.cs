@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             label1 = new Label();
+            listadoVentas = new FlowLayoutPanel();
+            checkedListBox1 = new CheckedListBox();
             SuspendLayout();
             // 
             // label1
@@ -40,12 +42,31 @@
             label1.Size = new Size(330, 31);
             label1.TabIndex = 0;
             label1.Text = "Formulario de Nuevo Archivo";
+            label1.Click += label1_Click;
+            // 
+            // listadoVentas
+            // 
+            listadoVentas.AutoScroll = true;
+            listadoVentas.Location = new Point(407, 58);
+            listadoVentas.Name = "listadoVentas";
+            listadoVentas.Size = new Size(827, 768);
+            listadoVentas.TabIndex = 1;
+            // 
+            // checkedListBox1
+            // 
+            checkedListBox1.FormattingEnabled = true;
+            checkedListBox1.Location = new Point(271, 519);
+            checkedListBox1.Name = "checkedListBox1";
+            checkedListBox1.Size = new Size(8, 4);
+            checkedListBox1.TabIndex = 2;
             // 
             // Archivo
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1275, 928);
+            Controls.Add(checkedListBox1);
+            Controls.Add(listadoVentas);
             Controls.Add(label1);
             Name = "Archivo";
             Text = "Archivo";
@@ -56,5 +77,7 @@
         #endregion
 
         private Label label1;
+        private FlowLayoutPanel listadoVentas;
+        private CheckedListBox checkedListBox1;
     }
 }

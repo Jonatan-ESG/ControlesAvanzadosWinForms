@@ -33,10 +33,10 @@
             inicioToolStripMenuItem = new ToolStripMenuItem();
             nuevoArchivoToolStripMenuItem = new ToolStripMenuItem();
             nuevoProyectoToolStripMenuItem = new ToolStripMenuItem();
+            nuevaTareaToolStripMenuItem = new ToolStripMenuItem();
             vistaToolStripMenuItem = new ToolStripMenuItem();
             horizontalToolStripMenuItem = new ToolStripMenuItem();
             verticalToolStripMenuItem = new ToolStripMenuItem();
-            nuevaTareaToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -67,7 +67,7 @@
             // nuevoArchivoToolStripMenuItem
             // 
             nuevoArchivoToolStripMenuItem.Name = "nuevoArchivoToolStripMenuItem";
-            nuevoArchivoToolStripMenuItem.Size = new Size(224, 26);
+            nuevoArchivoToolStripMenuItem.Size = new Size(197, 26);
             nuevoArchivoToolStripMenuItem.Text = "Nuevo Archivo";
             nuevoArchivoToolStripMenuItem.Click += nuevoArchivoToolStripMenuItem_Click;
             // 
@@ -75,9 +75,15 @@
             // 
             nuevoProyectoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { nuevaTareaToolStripMenuItem });
             nuevoProyectoToolStripMenuItem.Name = "nuevoProyectoToolStripMenuItem";
-            nuevoProyectoToolStripMenuItem.Size = new Size(224, 26);
+            nuevoProyectoToolStripMenuItem.Size = new Size(197, 26);
             nuevoProyectoToolStripMenuItem.Text = "Nuevo Proyecto";
             nuevoProyectoToolStripMenuItem.Click += nuevoProyectoToolStripMenuItem_Click;
+            // 
+            // nuevaTareaToolStripMenuItem
+            // 
+            nuevaTareaToolStripMenuItem.Name = "nuevaTareaToolStripMenuItem";
+            nuevaTareaToolStripMenuItem.Size = new Size(173, 26);
+            nuevaTareaToolStripMenuItem.Text = "Nueva Tarea";
             // 
             // vistaToolStripMenuItem
             // 
@@ -99,12 +105,6 @@
             verticalToolStripMenuItem.Size = new Size(162, 26);
             verticalToolStripMenuItem.Text = "Vertical";
             verticalToolStripMenuItem.Click += verticalToolStripMenuItem_Click;
-            // 
-            // nuevaTareaToolStripMenuItem
-            // 
-            nuevaTareaToolStripMenuItem.Name = "nuevaTareaToolStripMenuItem";
-            nuevaTareaToolStripMenuItem.Size = new Size(224, 26);
-            nuevaTareaToolStripMenuItem.Text = "Nueva Tarea";
             // 
             // Contenedor
             // 
