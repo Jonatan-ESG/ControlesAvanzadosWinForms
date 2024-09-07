@@ -18,7 +18,6 @@ namespace ControlesAvanzados
         {
             InitializeComponent();
             agregarVentas();
-            mostrarVentas();
             inicializarListBox();
             inicializarComboBoxAnios();
             inicializarComboBoxMeses();
@@ -56,24 +55,24 @@ namespace ControlesAvanzados
         private void mostrarVentas()
         {
             listadoVentas.Controls.Clear();
-            if (selectorDepartamento.SelectedItems.Count == 0)
+
+            /*
+                Where es una función de LINQ que permite filtrar una lista de elementos, ejecuta una función 
+                por cada elemento de la lista y si la función retorna true, el elemento es incluido en la lista resultante.
+                Es útil para filtrar elementos de una lista que cumplan con ciertas condiciones.
+                El formato de las funciones lambda es el siguiente: (elemento) => condición, si quisiera sustituirse podría usarse 
+                una función anónima, con el formato delegate(bool nombreVariable) { return condición; } o una función normal.
+            */
+            
+            List<Venta> ventasFiltradas = ventas
+                .Where(venta => selectorDepartamento.SelectedItem == null || selectorDepartamento.SelectedItems.Contains(venta.Departamento))
+                .Where(venta => venta.Anio == (int)comboBoxAnios.SelectedItem) //Una forma de hacer parseo seguro
+                .Where(venta => venta.Mes == comboBoxMeses.SelectedIndex + 1).ToList();
+
+            foreach (Venta venta in ventasFiltradas)
             {
-                foreach (Venta venta in ventas)
-                {
-                    Label labelVenta = crearEqituetaVenta(venta);
-                    listadoVentas.Controls.Add(labelVenta);
-                }
-            }
-            else
-            {
-                foreach (Venta venta in ventas)
-                {
-                    if (selectorDepartamento.SelectedItems.Contains(venta.Departamento))
-                    {
-                        Label labelVenta = crearEqituetaVenta(venta);
-                        listadoVentas.Controls.Add(labelVenta);
-                    }
-                }
+                Label labelVenta = crearEqituetaVenta(venta);
+                listadoVentas.Controls.Add(labelVenta);
             }
         }
 
@@ -133,7 +132,7 @@ namespace ControlesAvanzados
         private string obtenerNombreMesPorNumero(int numeroMes)
         {
             string[] meses = { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" };
-            return meses[numeroMes -1];
+            return meses[numeroMes - 1];
         }
 
         private Label crearEqituetaVenta(Venta venta)
@@ -150,6 +149,16 @@ namespace ControlesAvanzados
         }
 
         private void selectorDepartamento_SelectedValueChanged(object sender, EventArgs e)
+        {
+            mostrarVentas();
+        }
+
+        private void comboBoxAnios_SelectedValueChanged(object sender, EventArgs e)
+        {
+            mostrarVentas();
+        }
+
+        private void comboBoxMeses_SelectedValueChanged(object sender, EventArgs e)
         {
             mostrarVentas();
         }

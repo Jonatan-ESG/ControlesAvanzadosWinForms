@@ -82,6 +82,7 @@
             comboBoxAnios.Name = "comboBoxAnios";
             comboBoxAnios.Size = new Size(315, 28);
             comboBoxAnios.TabIndex = 4;
+            comboBoxAnios.SelectedValueChanged += comboBoxAnios_SelectedValueChanged;
             // 
             // comboBoxMeses
             // 
@@ -90,6 +91,7 @@
             comboBoxMeses.Name = "comboBoxMeses";
             comboBoxMeses.Size = new Size(312, 28);
             comboBoxMeses.TabIndex = 5;
+            comboBoxMeses.SelectedValueChanged += comboBoxMeses_SelectedValueChanged;
             // 
             // label2
             // 
