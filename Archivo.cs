@@ -20,6 +20,8 @@ namespace ControlesAvanzados
             agregarVentas();
             mostrarVentas();
             inicializarListBox();
+            inicializarComboBoxAnios();
+            inicializarComboBoxMeses();
         }
 
         private void agregarVentas()
@@ -89,6 +91,45 @@ namespace ControlesAvanzados
             {
                 selectorDepartamento.Items.Add(departamento);
             }
+        }
+
+        private void inicializarComboBoxAnios()
+        {
+            List<int> anios = new List<int>();
+            foreach (Venta venta in ventas)
+            {
+                if (!anios.Contains(venta.Anio))
+                {
+                    anios.Add(venta.Anio);
+                }
+            }
+            foreach (int anio in anios)
+            {
+                comboBoxAnios.Items.Add(anio);
+            }
+        }
+
+        private void inicializarComboBoxMeses()
+        {
+            List<string> meses = new List<string>();
+            foreach (Venta venta in ventas)
+            {
+                string nombreMes = obtenerNombreMesPorNumero(venta.Mes);
+                if (!meses.Contains(nombreMes))
+                {
+                    meses.Add(nombreMes);
+                }
+            }
+            foreach (string mes in meses)
+            {
+                comboBoxMeses.Items.Add(mes);
+            }
+        }
+
+        private string obtenerNombreMesPorNumero(int numeroMes)
+        {
+            string[] meses = { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" };
+            return meses[numeroMes -1];
         }
 
         private Label crearEqituetaVenta(Venta venta)

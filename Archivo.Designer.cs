@@ -32,6 +32,11 @@
             listadoVentas = new FlowLayoutPanel();
             checkedListBox1 = new CheckedListBox();
             selectorDepartamento = new ListBox();
+            comboBoxAnios = new ComboBox();
+            comboBoxMeses = new ComboBox();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -63,18 +68,66 @@
             // selectorDepartamento
             // 
             selectorDepartamento.FormattingEnabled = true;
-            selectorDepartamento.Location = new Point(26, 97);
+            selectorDepartamento.Location = new Point(26, 113);
             selectorDepartamento.Name = "selectorDepartamento";
             selectorDepartamento.SelectionMode = SelectionMode.MultiSimple;
             selectorDepartamento.Size = new Size(316, 164);
             selectorDepartamento.TabIndex = 3;
             selectorDepartamento.SelectedValueChanged += selectorDepartamento_SelectedValueChanged;
             // 
+            // comboBoxAnios
+            // 
+            comboBoxAnios.FormattingEnabled = true;
+            comboBoxAnios.Location = new Point(27, 334);
+            comboBoxAnios.Name = "comboBoxAnios";
+            comboBoxAnios.Size = new Size(315, 28);
+            comboBoxAnios.TabIndex = 4;
+            // 
+            // comboBoxMeses
+            // 
+            comboBoxMeses.FormattingEnabled = true;
+            comboBoxMeses.Location = new Point(30, 422);
+            comboBoxMeses.Name = "comboBoxMeses";
+            comboBoxMeses.Size = new Size(312, 28);
+            comboBoxMeses.TabIndex = 5;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(27, 78);
+            label2.Name = "label2";
+            label2.Size = new Size(181, 20);
+            label2.TabIndex = 6;
+            label2.Text = "Seleccionar Depatamento";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(30, 306);
+            label3.Name = "label3";
+            label3.Size = new Size(116, 20);
+            label3.TabIndex = 7;
+            label3.Text = "Seleccionar Año";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(31, 390);
+            label4.Name = "label4";
+            label4.Size = new Size(116, 20);
+            label4.TabIndex = 8;
+            label4.Text = "Seleccionar Mes";
+            // 
             // Archivo
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1275, 928);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(comboBoxMeses);
+            Controls.Add(comboBoxAnios);
             Controls.Add(selectorDepartamento);
             Controls.Add(checkedListBox1);
             Controls.Add(listadoVentas);
@@ -91,5 +144,10 @@
         private FlowLayoutPanel listadoVentas;
         private CheckedListBox checkedListBox1;
         private ListBox selectorDepartamento;
+        private ComboBox comboBoxAnios;
+        private ComboBox comboBoxMeses;
+        private Label label2;
+        private Label label3;
+        private Label label4;
     }
 }
