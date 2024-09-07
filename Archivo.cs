@@ -107,6 +107,8 @@ namespace ControlesAvanzados
             {
                 comboBoxAnios.Items.Add(anio);
             }
+
+            comboBoxAnios.SelectedIndex = 0;
         }
 
         private void inicializarComboBoxMeses()
@@ -124,6 +126,8 @@ namespace ControlesAvanzados
             {
                 comboBoxMeses.Items.Add(mes);
             }
+
+            comboBoxMeses.SelectedIndex = 0;
         }
 
         private string obtenerNombreMesPorNumero(int numeroMes)

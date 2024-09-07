@@ -68,7 +68,7 @@
             // selectorDepartamento
             // 
             selectorDepartamento.FormattingEnabled = true;
-            selectorDepartamento.Location = new Point(26, 113);
+            selectorDepartamento.Location = new Point(32, 276);
             selectorDepartamento.Name = "selectorDepartamento";
             selectorDepartamento.SelectionMode = SelectionMode.MultiSimple;
             selectorDepartamento.Size = new Size(316, 164);
@@ -78,7 +78,7 @@
             // comboBoxAnios
             // 
             comboBoxAnios.FormattingEnabled = true;
-            comboBoxAnios.Location = new Point(27, 334);
+            comboBoxAnios.Location = new Point(32, 100);
             comboBoxAnios.Name = "comboBoxAnios";
             comboBoxAnios.Size = new Size(315, 28);
             comboBoxAnios.TabIndex = 4;
@@ -86,7 +86,7 @@
             // comboBoxMeses
             // 
             comboBoxMeses.FormattingEnabled = true;
-            comboBoxMeses.Location = new Point(30, 422);
+            comboBoxMeses.Location = new Point(35, 188);
             comboBoxMeses.Name = "comboBoxMeses";
             comboBoxMeses.Size = new Size(312, 28);
             comboBoxMeses.TabIndex = 5;
@@ -94,7 +94,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(27, 78);
+            label2.Location = new Point(33, 241);
             label2.Name = "label2";
             label2.Size = new Size(181, 20);
             label2.TabIndex = 6;
@@ -103,7 +103,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(30, 306);
+            label3.Location = new Point(35, 72);
             label3.Name = "label3";
             label3.Size = new Size(116, 20);
             label3.TabIndex = 7;
@@ -112,7 +112,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(31, 390);
+            label4.Location = new Point(36, 156);
             label4.Name = "label4";
             label4.Size = new Size(116, 20);
             label4.TabIndex = 8;
